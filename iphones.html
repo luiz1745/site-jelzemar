@@ -7,17 +7,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-
-
         .product-image {
             height: 250px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: white;
+            background-color: rgb(255, 255, 255);
             padding: 20px;
         }
 
+        .product-card {
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .storage-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .storage-option {
+            background-color: #413f34;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
     </style>
 </head>
 <body>
@@ -28,9 +49,9 @@
                 <div>
                     <a href="index.html" class="logo">
                         <i class="fas fa-laptop-code"></i>
-                        Ekulli<span>Tech</span>
+                        Ekuli<span>Tech</span>
                     </a>
-                    <div class="tagline">Ekulli Company</div>
+                    <div class="tagline">Ekuli Company</div>
                 </div>
                 
                 <div class="search-bar">
@@ -71,37 +92,49 @@
             <h2 class="section-title">iPhone 17 Series</h2>
             <div class="products-grid">
                 <!-- iPhone 17 Pro Max -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='selecionar-iphone.html?model=iphone-17-pro-max-256'">
                     <div class="product-image">
                         <img src="https://rebro-store.ru/upload/iblock/fdc/tmynb3lzu5qjsrgy0e8uayxv3c2kbxpj.jpg" alt="iPhone 17 Pro Max">
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 17 Pro Max</h3>
-                        <p class="product-price">1.299.900 Kz</p>
+                        <div class="storage-options">
+                            <div class="storage-option">256GB: 1.930.000 Kz</div>
+                            <div class="storage-option">512GB: 1.960.000 Kz</div>
+                            <div class="storage-option">1TB: 2.150.000 Kz</div>
+                            <div class="storage-option">2TB: 2.220.000 Kz</div>
+                        </div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
                 
                 <!-- iPhone 17 Pro -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='selecionar-iphone.html?model=iphone-17-pro-256'">
                     <div class="product-image">
                         <img src="https://iphoriya.ru/wp-content/uploads/iphone-17-pro-max-cosmic-orange.webp" alt="iPhone 17 Pro">
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 17 Pro</h3>
-                        <p class="product-price">1.049.900 Kz</p>
+                        <div class="storage-options">
+                            <div class="storage-option">256GB: 1.870.000 Kz</div>
+                            <div class="storage-option">512GB: 1.890.000 Kz</div>
+                            <div class="storage-option">1TB: 1.920.000 Kz</div>
+                        </div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
                 
                 <!-- iPhone 17 -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='selecionar-iphone.html?model=iphone-17-256'">
                     <div class="product-image">
                         <img src="https://ipixel.ru/upload/iblock/09f/1h7cezikek1ofmismm7ifcap613sscm8.jpg" alt="iPhone 17">
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 17</h3>
-                        <p class="product-price">879.900 Kz</p>
+                        <div class="storage-options">
+                            <div class="storage-option">256GB: 1.170.000 Kz</div>
+                            <div class="storage-option">512GB: 1.210.000 Kz</div>
+                        </div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -113,37 +146,49 @@
             <h2 class="section-title">iPhone 16 Series</h2>
             <div class="products-grid">
                 <!-- iPhone 16 Pro Max -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='selecionar-iphone.html?model=iphone-16-pro-max-256'">
                     <div class="product-image">
                         <img src="https://apple-avenue.ru/upload/iblock/a37/gbvisyzsibp9vtvb2plsuw14wu7lnjb3.jpg" alt="iPhone 16 Pro Max">
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 16 Pro Max</h3>
-                        <p class="product-price">999.900 Kz</p>
+                        <div class="storage-options">
+                            <div class="storage-option">256GB: 1.350.000 Kz</div>
+                            <div class="storage-option">512GB: 1.410.000 Kz</div>
+                            <div class="storage-option">1TB: 1.560.000 Kz</div>
+                        </div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
                 
                 <!-- iPhone 16 Pro -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='selecionar-iphone.html?model=iphone-16-pro-256'">
                     <div class="product-image">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNczoFdU916HKHXIXtTmTZLiDK9kfTGJMQUA&s" alt="iPhone 16 Pro">
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 16 Pro</h3>
-                        <p class="product-price">849.900 Kz</p>
+                        <div class="storage-options">
+                            <div class="storage-option">256GB: 1.030.000 Kz</div>
+                            <div class="storage-option">512GB: 1.100.000 Kz</div>
+                            <div class="storage-option">1TB: 1.200.000 Kz</div>
+                        </div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
                 
                 <!-- iPhone 16 -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='selecionar-iphone.html?model=iphone-16-128'">
                     <div class="product-image">
                         <img src="https://белоеяблоко.рф/upload/resize_cache/iblock/2bb/800_800_1/rzcbgbfiii1bvr4xe5ck48gxcuze98ky.png" alt="iPhone 16">
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 16</h3>
-                        <p class="product-price">679.900 Kz</p>
+                        <div class="storage-options">
+                            <div class="storage-option">128GB: 980.000 Kz</div>
+                            <div class="storage-option">256GB: 1.000.000 Kz</div>
+                            <div class="storage-option">512GB: 1.060.000 Kz</div>
+                        </div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -155,37 +200,49 @@
             <h2 class="section-title">iPhone 15 Series</h2>
             <div class="products-grid">
                 <!-- iPhone 15 Pro Max -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='selecionar-iphone.html?model=iphone-15-pro-max-256'">
                     <div class="product-image">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJcolMLusTfVMd5T7aHUEz4diSflXSwfaV4A&s" alt="iPhone 15 Pro Max">
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 15 Pro Max</h3>
-                        <p class="product-price">849.900 Kz</p>
+                        <div class="storage-options">
+                            <div class="storage-option">256GB: 1.100.000 Kz</div>
+                            <div class="storage-option">512GB: 1.200.000 Kz</div>
+                        </div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
                 
                 <!-- iPhone 15 Pro -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='selecionar-iphone.html?model=iphone-15-pro-128'">
                     <div class="product-image">
                         <img src="https://rebro-store.ru/upload/iblock/653/bue5rc030pion0doern3egx8n8x39lpb.jpg" alt="iPhone 15 Pro">
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 15 Pro</h3>
-                        <p class="product-price">689.900 Kz</p>
+                        <div class="storage-options">
+                            <div class="storage-option">128GB: 915.000 Kz</div>
+                            <div class="storage-option">256GB: 935.000 Kz</div>
+                            <div class="storage-option">512GB: 950.000 Kz</div>
+                            <div class="storage-option">1TB: 980.000 Kz</div>
+                        </div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
                 
                 <!-- iPhone 15 -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='selecionar-iphone.html?model=iphone-15-128'">
                     <div class="product-image">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoSjwRfdLVjKITqG93fSLiADmXvYPpR5nxqg&s" alt="iPhone 15">
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 15</h3>
-                        <p class="product-price">529.900 Kz</p>
+                        <div class="storage-options">
+                            <div class="storage-option">128GB: 780.000 Kz</div>
+                            <div class="storage-option">256GB: 830.000 Kz</div>
+                            <div class="storage-option">512GB: 860.000 Kz</div>
+                        </div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -197,37 +254,45 @@
             <h2 class="section-title">iPhone 14 Series</h2>
             <div class="products-grid">
                 <!-- iPhone 14 Pro Max -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='selecionar-iphone.html?model=iphone-14-pro-max-128'">
                     <div class="product-image">
                         <img src="https://niceapplespb.ru/wp-content/uploads/2023/05/apple-iphone-14-pro-128gb.1000x.webp" alt="iPhone 14 Pro Max">
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 14 Pro Max</h3>
-                        <p class="product-price">699.900 Kz</p>
+                        <div class="storage-options">
+                            <div class="storage-option">128GB: 830.000 Kz</div>
+                            <div class="storage-option">256GB: 850.000 Kz</div>
+                        </div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
                 
                 <!-- iPhone 14 Pro -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='selecionar-iphone.html?model=iphone-14-pro-128'">
                     <div class="product-image">
                         <img src="https://magimag.ma/web/image/product.template/6637/image_1024?unique=b3edaae" alt="iPhone 14 Pro">
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 14 Pro</h3>
-                        <p class="product-price">589.900 Kz</p>
+                        <div class="storage-options">
+                            <div class="storage-option">128GB: 740.000 Kz</div>
+                            <div class="storage-option">256GB: 780.000 Kz</div>
+                        </div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
                 
                 <!-- iPhone 14 -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='selecionar-iphone.html?model=iphone-14-128'">
                     <div class="product-image">
                         <img src="https://applestore72.ru/upload/resize_cache/iblock/0a0/1024_1024_0/s9copnocraqjm51clmk2lau14m6lzc3k.jpeg" alt="iPhone 14">
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 14</h3>
-                        <p class="product-price">429.900 Kz</p>
+                        <div class="storage-options">
+                            <div class="storage-option">128GB: 700.000 Kz</div>
+                        </div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -239,37 +304,49 @@
             <h2 class="section-title">iPhone 13 Series</h2>
             <div class="products-grid">
                 <!-- iPhone 13 Pro Max -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='selecionar-iphone.html?model=iphone-13-pro-max-128'">
                     <div class="product-image">
                         <img src="https://i0.wp.com/apple.nsk.ru/wp-content/uploads/2022/07/30059058bb.jpg?fit=430%2C430&ssl=1" alt="iPhone 13 Pro Max">
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 13 Pro Max</h3>
-                        <p class="product-price">599.900 Kz</p>
+                        <div class="storage-options">
+                            <div class="storage-option">128GB: 740.000 Kz</div>
+                            <div class="storage-option">256GB: 780.000 Kz</div>
+                            <div class="storage-option">512GB: 850.000 Kz</div>
+                        </div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
                 
                 <!-- iPhone 13 Pro -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='selecionar-iphone.html?model=iphone-13-pro-128'">
                     <div class="product-image">
                         <img src="https://niceapplespb.ru/wp-content/uploads/2022/03/13pro_green_1.jpg" alt="iPhone 13 Pro">
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 13 Pro</h3>
-                        <p class="product-price">489.900 Kz</p>
+                        <div class="storage-options">
+                            <div class="storage-option">128GB: 540.000 Kz</div>
+                            <div class="storage-option">256GB: 565.000 Kz</div>
+                            <div class="storage-option">512GB: 590.000 Kz</div>
+                        </div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
                 
                 <!-- iPhone 13 -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='selecionar-iphone.html?model=iphone-13-128'">
                     <div class="product-image">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-ckAo0Bo1MztxDd3Qwx3woraXlEqJWSfp6A&s" alt="iPhone 13">
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 13</h3>
-                        <p class="product-price">359.900 Kz</p>
+                        <div class="storage-options">
+                            <div class="storage-option">128GB: 410.000 Kz</div>
+                            <div class="storage-option">256GB: 430.000 Kz</div>
+                            <div class="storage-option">512GB: 460.000 Kz</div>
+                        </div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -281,37 +358,48 @@
             <h2 class="section-title">iPhone 12 Series</h2>
             <div class="products-grid">
                 <!-- iPhone 12 Pro Max -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='selecionar-iphone.html?model=iphone-12-pro-max-128'">
                     <div class="product-image">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQjisEMyYuSO0z_UhoE1cWtsl9We7U5uJs7Q&s" alt="iPhone 12 Pro Max">
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 12 Pro Max</h3>
-                        <p class="product-price">449.900 Kz</p>
+                        <div class="storage-options">
+                            <div class="storage-option">128GB: 540.000 Kz</div>
+                            <div class="storage-option">256GB: 570.000 Kz</div>
+                            <div class="storage-option">512GB: 600.000 Kz</div>
+                        </div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
                 
                 <!-- iPhone 12 Pro -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='selecionar-iphone.html?model=iphone-12-pro-128'">
                     <div class="product-image">
                         <img src="https://www.yablokitradein.ru/image/cache/catalog/12%20pro%20iphone/iphone-12-pro-gold-hero-500x500.png" alt="iPhone 12 Pro">
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 12 Pro</h3>
-                        <p class="product-price">389.900 Kz</p>
+                        <div class="storage-options">
+                            <div class="storage-option">128GB: 450.000 Kz</div>
+                            <div class="storage-option">256GB: 480.000 Kz</div>
+                        </div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
                 
                 <!-- iPhone 12 -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='selecionar-iphone.html?model=iphone-12-64'">
                     <div class="product-image">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS36_RuWtAWrt35BUBf3tnMIEdbew9cVdKt1A&s" alt="iPhone 12">
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 12</h3>
-                        <p class="product-price">319.900 Kz</p>
+                        <div class="storage-options">
+                            <div class="storage-option">64GB: 350.000 Kz</div>
+                            <div class="storage-option">128GB: 370.000 Kz</div>
+                            <div class="storage-option">256GB: 400.000 Kz</div>
+                        </div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -323,37 +411,48 @@
             <h2 class="section-title">iPhone 11 Series</h2>
             <div class="products-grid">
                 <!-- iPhone 11 Pro Max -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='selecionar-iphone.html?model=iphone-11-pro-max-64'">
                     <div class="product-image">
                         <img src="https://mobi-s.ru/wp-content/uploads/2021/05/1.jpg.webp" alt="iPhone 11 Pro Max">
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 11 Pro Max</h3>
-                        <p class="product-price">379.900 Kz</p>
+                        <div class="storage-options">
+                            <div class="storage-option">64GB: 400.000 Kz</div>
+                            <div class="storage-option">256GB: 430.000 Kz</div>
+                            <div class="storage-option">512GB: 460.000 Kz</div>
+                        </div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
                 
                 <!-- iPhone 11 Pro -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='selecionar-iphone.html?model=iphone-11-pro-64'">
                     <div class="product-image">
                         <img src="https://niceapplespb.ru/wp-content/uploads/2022/03/11promaxgold.jpeg" alt="iPhone 11 Pro">
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 11 Pro</h3>
-                        <p class="product-price">329.900 Kz</p>
+                        <div class="storage-options">
+                            <div class="storage-option">64GB: 370.000 Kz</div>
+                            <div class="storage-option">256GB: 390.000 Kz</div>
+                        </div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
                 
                 <!-- iPhone 11 -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='selecionar-iphone.html?model=iphone-11-64'">
                     <div class="product-image">
                         <img src="https://device365.ru/upload/iblock/0d2/skadotdylqdg2cj4y0kza6smw8vkngje.webp" alt="iPhone 11">
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 11</h3>
-                        <p class="product-price">269.900 Kz</p>
+                        <div class="storage-options">
+                            <div class="storage-option">64GB: 250.000 Kz</div>
+                            <div class="storage-option">128GB: 280.000 Kz</div>
+                            <div class="storage-option">256GB: 300.000 Kz</div>
+                        </div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -365,37 +464,62 @@
             <h2 class="section-title">iPhone X Series</h2>
             <div class="products-grid">
                 <!-- iPhone XS Max -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='selecionar-iphone.html?model=iphone-xs-max-64'">
                     <div class="product-image">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVl2dkBq6BNavmGLirzCUFEkqwXiBxQmI8F_BIvTrxOkSWOFShLqId6veChph3jCPutXA&usqp=CAU" alt="iPhone XS Max">
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone XS Max</h3>
-                        <p class="product-price">249.900 Kz</p>
+                        <div class="storage-options">
+                            <div class="storage-option">64GB: 265.000 Kz</div>
+                            <div class="storage-option">256GB: 280.000 Kz</div>
+                        </div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
                 
                 <!-- iPhone XS -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='selecionar-iphone.html?model=iphone-xs-64'">
                     <div class="product-image">
                         <img src="https://смартфон74.рф/image/cache/catalog/1vossta/iphonexsmaxbu/appleiphonexsmaxser-1000x1000.jpg" alt="iPhone XS">
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone XS</h3>
-                        <p class="product-price">219.900 Kz</p>
+                        <div class="storage-options">
+                            <div class="storage-option">64GB: 230.000 Kz</div>
+                            <div class="storage-option">256GB: 250.000 Kz</div>
+                        </div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
                 
                 <!-- iPhone XR -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='selecionar-iphone.html?model=iphone-xr-64'">
                     <div class="product-image">
                         <img src="https://i-stock.store/image/cache/catalog/1new1/xriphone/appleiphonexryellow-500x500.png" alt="iPhone XR">
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone XR</h3>
-                        <p class="product-price">189.900 Kz</p>
+                        <div class="storage-options">
+                            <div class="storage-option">64GB: 230.000 Kz</div>
+                            <div class="storage-option">128GB: 250.000 Kz</div>
+                            <div class="storage-option">256GB: 265.000 Kz</div>
+                        </div>
+                        <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
+                    </div>
+                </div>
+                
+                <!-- iPhone X -->
+                <div class="product-card" onclick="window.location.href='selecionar-iphone.html?model=iphone-x-64'">
+                    <div class="product-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6QxKQcVqTQOQfQY5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q5Q&s" alt="iPhone X">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">iPhone X</h3>
+                        <div class="storage-options">
+                            <div class="storage-option">64GB: 200.000 Kz</div>
+                            <div class="storage-option">256GB: 220.000 Kz</div>
+                        </div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -407,25 +531,31 @@
             <h2 class="section-title">iPhone 8 Series</h2>
             <div class="products-grid">
                 <!-- iPhone 8 Plus -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='selecionar-iphone.html?model=iphone-8-plus-64'">
                     <div class="product-image">
                         <img src="https://www.ubuy.co.am/productimg/?image=aHR0cHM6Ly9pNS53YWxtYXJ0aW1hZ2VzLmNvbS9zZW8vUHJlLU93bmVkLWlQaG9uZS04LVBsdXMtNjRHQi1Hb2xkLVVubG9ja2VkLVJlZnVyYmlzaGVkLUdvb2RfODBhNWU4MTItYzZhYy00N2FkLThlMTUtZDk2YzBiNjk3N2M0LmNkM2Q1OWNhNzc5OTU3NWUzZTdjMzNhMzE4Njk1ODM0LmpwZWc.jpg" alt="iPhone 8 Plus">
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 8 Plus</h3>
-                        <p class="product-price">149.900 Kz</p>
+                        <div class="storage-options">
+                            <div class="storage-option">64GB: 150.000 Kz</div>
+                            <div class="storage-option">256GB: 170.000 Kz</div>
+                        </div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
                 
                 <!-- iPhone 8 -->
-                <div class="product-card">
+                <div class="product-card" onclick="window.location.href='selecionar-iphone.html?model=iphone-8-64'">
                     <div class="product-image">
                         <img src="https://mobi-s.ru/wp-content/uploads/2018/01/iphone-8-silver.jpg.webp" alt="iPhone 8">
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 8</h3>
-                        <p class="product-price">119.900 Kz</p>
+                        <div class="storage-options">
+                            <div class="storage-option">64GB: 110.000 Kz</div>
+                            <div class="storage-option">256GB: 130.000 Kz</div>
+                        </div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
