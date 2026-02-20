@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
+        /* ========== CORREÇÃO DO MENU NA PÁGINA MACBOOKS ========== */
+        /* O menu principal já está no style.css, não precisamos duplicar */
+        
+        /* Estilos específicos da página MacBooks */
         .product-image {
             height: 250px;
             display: flex;
@@ -34,12 +38,11 @@
         }
         
         .config-option {
-        color: yellow;
-         font-weight: 400;
-        margin-bottom: 6px;
-        font-size: 1.2rem;
-        color: var(--text);
-        line-height: 1.4;
+            font-weight: 400;
+            margin-bottom: 6px;
+            font-size: 1.2rem;
+            color: var(--text);
+            line-height: 1.4;
         }
         
         .generation-section {
@@ -47,10 +50,41 @@
         }
         
         .section-title {
-            border-bottom: 2px solid #c0df13;
+            border-bottom: 2px solid var(--secondary);
             padding-bottom: 10px;
             margin-bottom: 20px;
-            color: #333;
+            color: var(--text);
+        }
+        
+        /* Estilo específico para hero MacBooks */
+        .macbooks-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+            background-size: cover;
+            background-position: center;
+            color: var(--text);
+            padding: 5rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+            border-bottom: 2px solid var(--secondary);
+        }
+        
+        .macbooks-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .macbooks-hero h1 span {
+            color: var(--secondary);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+        
+        .macbooks-hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.8;
         }
     </style>
 </head>
@@ -78,18 +112,17 @@
     </header>
     
     
-    <!-- ========== NAVEGAÇÃO ========== -->
-    <nav>
-        <div class="container">
-            <ul class="nav-links">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="sobre.html">Sobre Nós</a></li>
-                <li><a href="iphones.html">iPhone</a></li>
-                <li><a href="mackbooks.html" class="active">MacBook</a></li>
-            </ul>
-        </div>
-    </nav>
-
+<!-- ========== NAVEGAÇÃO ========== -->
+<nav>
+    <div class="container">
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+            <li><a href="sobre.html"><i class="fas fa-info-circle"></i> Sobre Nós</a></li>
+            <li><a href="iphones.html"><i class="fas fa-mobile-alt"></i> iPhone</a></li>
+            <li><a href="mackbooks.html"><i class="fas fa-laptop"></i> MacBook</a></li>
+        </ul>
+    </div>
+</nav>
     <!-- ========== CONTEÚDO PRINCIPAL ========== -->
     <main class="container">
         <!-- ========== HERO SECTION MACBOOKS ========== -->
@@ -323,6 +356,10 @@
             const navLinks = document.querySelectorAll('.nav-links a');
             
             navLinks.forEach(link => {
+                // Remove classe active de todos
+                link.classList.remove('active');
+                
+                // Adiciona classe active na página atual
                 if (link.getAttribute('href') === currentPage) {
                     link.classList.add('active');
                 }

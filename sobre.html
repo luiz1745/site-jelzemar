@@ -6,6 +6,38 @@
     <title>Sobre Nós - EkuliTech</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ========== CORREÇÃO DO MENU ========== */
+        /* O menu já está no style.css, mas se precisar ajustar algo: */
+        
+        /* Corrija o link ativo se necessário */
+        .nav-links a[href="sobre.html"] {
+            color: #FFD700 !important;
+            background: rgba(255, 215, 0, 0.1) !important;
+        }
+        
+        .nav-links a[href="sobre.html"]::after {
+            opacity: 1 !important;
+            transform: scaleX(1) !important;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5) !important;
+        }
+        
+        /* Corrija o link do iPhone que não é ativo nesta página */
+        .nav-links a[href="iphones.html"] {
+            color: var(--text) !important;
+            background: transparent !important;
+        }
+        
+        .nav-links a[href="iphones.html"]::after {
+            opacity: 0 !important;
+            transform: scaleX(0) !important;
+        }
+        
+        .nav-links a[href="iphones.html"]:hover::after {
+            opacity: 1 !important;
+            transform: scaleX(1) !important;
+        }
+    </style>
 </head>
 <body>
  <!-- ========== HEADER ========== -->
@@ -31,17 +63,16 @@
     </header>
     
     
-    <!-- ========== NAVEGAÇÃO ========== -->
-    <nav>
-        <div class="container">
-            <ul class="nav-links">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="sobre.html" class="active">Sobre Nós</a></li>
-                <li><a href="iphones.html">iPhone</a></li>
-                <li><a href="mackbooks.html">MacBook</a></li>
-            </ul>
-        </div>
-    </nav>
+<!-- ========== NAVEGAÇÃO ========== -->
+<nav>
+    <div class="container">
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+            <li><a href="sobre.html"><i class="fas fa-info-circle"></i> Sobre Nós</a></li>
+            <li><a href="iphones.html"><i class="fas fa-mobile-alt"></i> iPhone</a></li>
+        </ul>
+    </div>
+</nav>
 
     <!-- ========== CONTEÚDO PRINCIPAL ========== -->
     <main class="container">
@@ -123,7 +154,6 @@
                     <h3>Categorias</h3>
                     <ul class="footer-links">
                         <li><a href="iphones.html">iPhone</a></li>
-                        <li><a href="mackbooks.html">MacBook</a></li>
                     </ul>
                 </div>
                 
@@ -143,6 +173,22 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script>
+        // Script para destacar automaticamente a página atual no menu
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            navLinks.forEach(link => {
+                // Remove classe active de todos
+                link.classList.remove('active');
+                
+                // Adiciona classe active na página atual
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
