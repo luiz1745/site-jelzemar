@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do dono - EkuliTech</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: #000000;
+            border-bottom: 2px solid #ffd700;
+            padding: 20px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .logo i {
+            color: #ffd700;
+        }
+
+        .logo span {
+            color: #ffd700;
+        }
+
+        .tagline {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 5px;
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .search-bar form {
+            display: flex;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #333;
+            background: #1a1a1a;
+            color: #fff;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+        }
+
+        .search-bar button {
+            padding: 10px 15px;
+            background: #ffd700;
+            border: none;
+            color: #000;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+
+        nav {
+            background: #111;
+            border-bottom: 1px solid #222;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            padding: 15px 0;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #ffd700;
+        }
+
+        .checkout-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 40px 0;
+        }
+
+        @media (max-width: 768px) {
+            .checkout-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .order-summary, .payment-form {
+            background: #111;
+            border-radius: 10px;
+            padding: 25px;
+            border: 1px solid #222;
+        }
+
+        .order-summary h2, .payment-form h2 {
+            color: #ffd700;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #222;
+        }
+
+        .product-image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .product-image-wrapper {
+            width: 280px;
+            height: 280px;
+            background: white;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            padding: 15px;
+        }
+
+        .product-image-wrapper img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .product-details {
+            text-align: center;
+        }
+
+        .product-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #ffd700;
+            margin: 15px 0 10px;
+        }
+
+        .product-variant {
+            color: #aaa;
+            margin: 5px 0;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffd700;
+            margin: 15px 0;
+        }
+
+        .summary-totals {
+            border-top: 2px solid #222;
+            margin-top: 20px;
+            padding-top: 20px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .summary-total {
+            font-size: 1.2rem;
+            color: #ffd700;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #aaa;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 5px;
+            color: #fff;
+            outline: none;
+            transition: border-color 0.3s;
+            font-family: inherit;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: #ffd700;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            background: #ffd700;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.2s;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background: #e6c200;
+            transform: scale(1.02);
+        }
+
+        .btn:disabled {
+            background: #666;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .security-notice {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .security-notice i {
+            color: #ffd700;
+            margin-right: 8px;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #000;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        footer {
+            background: #000;
+            margin-top: 60px;
+            padding: 40px 0 20px;
+            border-top: 1px solid #222;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            color: #ffd700;
+            margin-bottom: 15px;
+        }
+
+        .footer-column p, .footer-column li {
+            color: #888;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #888;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #ffd700;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            color: #666;
+        }
+
+        .required {
+            color: #ffd700;
+            font-size: 0.8rem;
+            margin-left: 5px;
+        }
+
+        .toast-error {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #ff3333;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .toast-error i {
+            font-size: 1.2rem;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 rx=%2722%27 fill=%27%230a0a0b%27/%3E%3Ctext x=%2750%27 y=%2770%27 font-size=%2770%27 font-weight=%27800%27 text-anchor=%27middle%27 fill=%27%23FFD700%27 font-family=%27Arial%27%3EE%3C/text%3E%3C/svg%3E">
+    <meta name="theme-color" content="#0a0a0b">
+    <meta name="description" content="EkuliTech - iPhones originais importados dos EUA com atendimento pelo chat. Luanda, Angola.">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div>
+                    <a href="index.html" class="logo">
+                        <i class="fas fa-laptop-code"></i>
+                        Ekuli<span>Tech</span>
+                    </a>
+                    <div class="tagline">Ekuli Company</div>
+                </div>
+                
+                <div class="search-bar">
+                    <form id="searchForm">
+                        <input type="text" id="searchInput" placeholder="Buscar produtos...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="iphones.html">iPhone</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container" style="max-width:1300px"><div class="setup-warn" id="warn" style="display:none"><h2>⚙️ Contas ainda não configuradas</h2><p style="color:#a1a1aa;margin-top:8px">O dono do site precisa colar as chaves do Firebase em <b>firebase-config.js</b>. Veja o arquivo LEIA-ME-FIREBASE.md.</p></div>
+<div id="deny" class="setup-warn" style="display:none"><h2>🔒 Acesso restrito</h2><p style="color:#a1a1aa;margin-top:8px">Esta área é só para o dono do site. Entre com o e-mail de administrador (e-mail verificado).</p></div>
+<div class="adm-layout" id="adm" style="display:none">
+ <section class="panel"><h2><i class="fas fa-inbox"></i> Pedidos <span id="cnt" style="color:#a1a1aa;font-weight:400"></span></h2>
+  <div class="chips" style="justify-content:flex-start;margin-bottom:12px" id="fchips"></div>
+  <input id="q" placeholder="Buscar nome, telefone ou nº..." style="width:100%;padding:11px 14px;background:#18181b;border:1px solid #26262a;border-radius:12px;color:#fff;margin-bottom:12px">
+  <div class="olist" id="olist"></div></section>
+ <section id="detail"><div class="panel" style="text-align:center;padding:60px 20px;color:#a1a1aa"><i class="fas fa-comments" style="font-size:2.5rem;color:#FFD700"></i><p style="margin-top:12px">Selecione um pedido para conversar com o cliente.</p></div></section>
+</div><div class="lightbox" id="lb"><img alt=""></div></main>
+<footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>EkuliTech</h3>
+                    <p>Ekuli Company - Especialistas em tecnologia importada dos Estados Unidos com garantia de qualidade e procedência.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="iphones.html">iPhone</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> +244 943 400 675</li>
+                        <li><i class="fas fa-envelope"></i> ekulicompany@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Luanda, Angola</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> EkuliTech - Ekuli Company - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+<script src="cart.js"></script>
+<script src="fb.js"></script>
+<script>
+(function(){var $=function(i){return document.getElementById(i)};var Y=document.getElementById("currentYear");if(Y)Y.textContent=new Date().getFullYear();
+
+var orders=[],cur=null,unm=null,msgs=[],filt='all',started=false;
+var FL=[['all','Todos'],['new','Novos'],['s1','Comprovante'],['s2','Pagos'],['s3','Enviados']];
+function renderChips(){$('fchips').innerHTML=FL.map(function(f){return '<button class="chip'+(filt===f[0]?' on':'')+'" data-k="'+f[0]+'">'+f[1]+'</button>'}).join('')}
+$('fchips').onclick=function(e){var k=e.target.dataset.k;if(k){filt=k;renderChips();renderList()}};
+$('q').oninput=function(){renderList()};
+function renderList(){ var q=$('q').value.toLowerCase().trim();
+ var l=orders.filter(function(o){ if(filt==='new'&&!o.unreadAdmin)return false; if(/^s\d$/.test(filt)&&o.status!==+filt[1])return false;
+  return !q||(String(o.num)+(o.customerName||'')+(o.customerPhone||'')+(o.email||'')).toLowerCase().indexOf(q)>-1})
+  .sort(function(a,b){return (b.unreadAdmin?1:0)-(a.unreadAdmin?1:0)||b.updatedAt-a.updatedAt});
+ var un=orders.filter(function(o){return o.unreadAdmin}).length; $('cnt').textContent='('+orders.length+')'; document.title=(un?'('+un+') ':'')+'Painel - EkuliTech';
+ $('olist').innerHTML=l.length?l.map(function(o){return '<div class="oitem'+(cur&&cur.id===o.id?' on':'')+'" data-id="'+o.id+'"><b>#'+o.num+' · '+Ekuli.esc(o.customerName)+(o.unreadAdmin?'<span class="dot"></span>':'')+'</b><span class="spill s'+o.status+'" style="margin:6px 0">'+Ekuli.statusLabels[o.status]+'</span><small>'+Ekuli.esc(o.totalText)+' Kz · '+new Date(o.updatedAt).toLocaleString('pt-BR',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'})+'</small><small>'+Ekuli.esc(o.lastMsg||'')+'</small></div>'}).join(''):'<p style="color:#a1a1aa;padding:10px">Nenhum pedido.</p>'}
+$('olist').onclick=function(e){var it=e.target.closest('.oitem');if(it)open(it.dataset.id)};
+function open(id){ location.hash=id; cur=orders.filter(function(o){return o.id===id})[0]; if(!cur)return; if(unm)unm(); msgs=[];
+ $('detail').innerHTML='<div class="panel"><h2><i class="fas fa-user"></i> #'+cur.num+' · '+Ekuli.esc(cur.customerName)+'</h2><div class="adm-info" id="info"></div><div class="adm-actions"><button id="bPaid">✅ Confirmar pagamento</button><button id="bShip">📦 Marcar como enviado</button><a class="adm-actions" style="display:inline"><button class="alt" id="bWa">WhatsApp do cliente</button></a></div></div>'
+ +'<div class="chat" style="height:min(62vh,620px)"><div class="msgs" id="msgs"></div><form class="chat-in" id="form"><input type="file" id="file" accept="image/*" hidden><button type="button" class="ibtn" id="attach"><i class="fas fa-image"></i></button><input type="text" id="txt" placeholder="Responder ao cliente..." autocomplete="off"><button class="ibtn go"><i class="fas fa-paper-plane"></i></button></form></div>';
+ info(); unm=Ekuli.watchMessages(id,function(m){msgs=m;var b=$('msgs');if(b){b.innerHTML=Ekuli.bubbles(m,true);b.scrollTop=b.scrollHeight}});
+ if(cur.unreadAdmin)Ekuli.patch(id,{unreadAdmin:false}).catch(function(){});
+ $('bPaid').onclick=function(){Ekuli.send(id,{from:'seller',text:'✅ Pagamento confirmado! Obrigado. Estamos preparando o envio do seu iPhone.'},{status:2,lastMsg:'Pagamento confirmado',unreadUser:true,unreadAdmin:false})};
+ $('bShip').onclick=function(){var t=prompt('Código de rastreio / observação (opcional):');if(t===null)return;Ekuli.send(id,{from:'seller',text:'📦 Seu pedido foi enviado! Prazo estimado: 15 a 28 dias úteis.'+(t?'\nRastreio: '+t:'')},{status:3,tracking:t||'',lastMsg:'Produto enviado',unreadUser:true,unreadAdmin:false})};
+ $('bWa').onclick=function(){window.open('https://wa.me/'+String(cur.customerPhone||'').replace(/\D/g,''),'_blank')};
+ $('form').onsubmit=function(e){e.preventDefault();var v=$('txt').value.trim();if(!v)return;$('txt').value='';Ekuli.send(id,{from:'seller',text:v},{lastMsg:v,unreadUser:true,unreadAdmin:false})};
+ $('attach').onclick=function(){$('file').click()};
+ $('file').onchange=function(){var f=this.files[0];if(!f)return;this.value='';Ekuli.compress(f,function(d){Ekuli.send(id,{from:'seller',text:'',img:d},{lastMsg:'📷 Imagem',unreadUser:true,unreadAdmin:false})})};
+ $('msgs').onclick=function(e){if(e.target.tagName==='IMG'){$('lb').firstChild.src=e.target.src;$('lb').style.display='flex'}};
+ renderList()}
+function info(){ if(!cur||!$('info'))return; $('info').innerHTML='<span>Telefone</span><b>'+Ekuli.esc(cur.customerPhone)+'</b><span>E-mail</span><b>'+Ekuli.esc(cur.email)+'</b><span>Endereço</span><b>'+Ekuli.esc(cur.address)+', '+Ekuli.esc(cur.city)+'</b><span>Itens</span><b>'+(cur.items||[]).map(function(i){return i.qty+'x '+Ekuli.esc(i.name)+' ('+Ekuli.esc(i.color)+', '+Ekuli.esc(i.storage)+')'}).join('<br>')+'</b><span>Total</span><b style="color:#FFD700">'+Ekuli.esc(cur.totalText)+' Kz</b><span>Status</span><b>'+Ekuli.statusLabels[cur.status]+'</b>'}
+$('lb').onclick=function(){this.style.display='none'};
+Ekuli.ready.then(function(){
+ if(!Ekuli.configured){$('warn').style.display='block';return}
+ Ekuli.onUser(function(u){ if(!u){location.href='login.html?next=admin.html';return}
+  if(!Ekuli.admin){$('deny').style.display='block';return}
+  if(started)return;started=true;$('adm').style.display='grid';renderChips();
+  Ekuli.allOrders(function(os){orders=os;if(cur){cur=os.filter(function(o){return o.id===cur.id})[0]||cur;info()}renderList();var h=location.hash.slice(1);if(h&&!cur)open(h)})})});
+})();
+</script>
+</body></html>

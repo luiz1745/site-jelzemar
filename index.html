@@ -6,6 +6,7 @@
     <title>EkuliTech - Ekuli Company</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="theme.css">
     <style>
         /* ========== CORREÇÃO DO MENU NA PÁGINA INICIAL ========== */
         /* O menu principal já está no style.css, removemos o CSS duplicado */
@@ -128,6 +129,9 @@
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
     </style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 rx=%2722%27 fill=%27%230a0a0b%27/%3E%3Ctext x=%2750%27 y=%2770%27 font-size=%2770%27 font-weight=%27800%27 text-anchor=%27middle%27 fill=%27%23FFD700%27 font-family=%27Arial%27%3EE%3C/text%3E%3C/svg%3E">
+    <meta name="theme-color" content="#0a0a0b">
+    <meta name="description" content="EkuliTech - iPhones originais importados dos EUA com atendimento pelo chat. Luanda, Angola.">
 </head>
 <body>
     <!-- ========== HEADER ========== -->
@@ -166,12 +170,18 @@
     <!-- ========== CONTEÚDO PRINCIPAL ========== -->
     <main class="container">
         <!-- ========== HERO SECTION ========== -->
-        <section class="hero">
-            <div class="container">
-                <h1>Ekuli<span>Tech</span> - Tecnologia de Ponta</h1>
-                <p>Os melhores iPhones e MacBooks importados diretamente dos EUA com garantia e qualidade.</p>
-            </div>
+        <section class="hero-pro">
+            <span class="pill"><i class="fas fa-shield-alt"></i> Importação direta dos EUA · Garantia EkuliTech</span>
+            <h1>O seu próximo iPhone, <em>direto dos EUA</em> até Luanda.</h1>
+            <p>Modelos originais, inspecionados um a um, com atendimento pessoal pelo chat e acompanhamento do pedido do início ao fim.</p>
+            <div class="hero-actions"><a class="btn" href="iphones.html">Ver iPhones</a><a class="btn-ghost" href="#como-comprar">Como comprar</a></div>
         </section>
+        <div class="trust-row">
+            <div><i class="fas fa-certificate"></i><span><b>100% originais</b>Procedência garantida</span></div>
+            <div><i class="fas fa-comments"></i><span><b>Chat com vendedor</b>Atendimento direto</span></div>
+            <div><i class="fas fa-plane-arrival"></i><span><b>15 a 28 dias úteis</b>Entrega em Angola</span></div>
+            <div><i class="fas fa-lock"></i><span><b>Compra segura</b>Pague e envie o comprovante</span></div>
+        </div>
         
         <!-- ========== SEÇÃO DESTAQUES ========== -->
         <h2 class="section-title">Destaques</h2>
@@ -184,7 +194,7 @@
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">iPhone 16 Pro Max</h3>
-                    <p class="product-price">1.299.870,00 AOA</p>
+                    <p class="product-price">A partir de 930.000,00 Kz</p>
                     <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                 </div>
             </div>
@@ -192,11 +202,11 @@
             <!-- Produto 2 - iPhone 15 Pro -->
             <div class="product-card" onclick="window.location.href='selecionar-iphone.html?model=iphone-15-pro'">
                 <div class="product-image">
-                    <img src="https://static.insales-cdn.com/images/products/1/2677/766470773/%D0%94%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD_%D0%B1%D0%B5%D0%B7_%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F__54_.png" alt="MacBook">
+                    <img src="https://static.insales-cdn.com/images/products/1/2677/766470773/%D0%94%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD_%D0%B1%D0%B5%D0%B7_%D0%BD%D0%B0%D0%B7%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F__54_.png" alt="iPhone 15 Pro">
                 </div>
                     <div class="product-info">
-                    <h3 class="product-title">iPhone Pro 15</h3>
-                    <p class="product-price">3.249.870,00 AOA</p>
+                    <h3 class="product-title">iPhone 15 Pro</h3>
+                    <p class="product-price">A partir de 730.000,00 Kz</p>
                     <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                 </div>
             </div>
@@ -208,7 +218,7 @@
                 </div>
                 <div class="product-info">
                     <h3 class="product-title">iPhone 14</h3>
-                    <p class="product-price">896.870,00 AOA</p>
+                    <p class="product-price">A partir de 430.000,00 Kz</p>
                     <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                 </div>
             </div>
@@ -218,10 +228,10 @@
         <section class="banners-section">
             <h2 class="banner-group-title">Categorias</h2>
             <div class="category-groups">
-                <!-- Grupo iPhone + Telefones -->
+                <!-- iPhone  -->
                 <div class="category-group">
-                    <h3 class="category-title">iPhones + Telefones</h3>
-                    <div class="banner-card iphone-banner" onclick="window.location.href='iphones.html'">
+                    <h3 class="category-title">iPhones</h3>
+                    <div class="banner-card iphone-banner" onclick="window.location.href='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk4TqCSkO_pbK4Y-zu-gJOo0LrQMVoUEohTJWgy3HSnw&s=10'">
                         <div class="banner-content">
                             <div class="banner-title">iPhones</div>
                             <div class="banner-subtitle">Os melhores modelos importados</div>
@@ -233,6 +243,13 @@
             </div>
         </section>
 
+        <section id="como-comprar"><h2 class="section-title">Como comprar</h2>
+        <div class="steps">
+            <div class="step"><span>1</span><h3>Escolha o iPhone</h3><p>Selecione modelo, cor e capacidade e adicione ao carrinho.</p></div>
+            <div class="step"><span>2</span><h3>Confirme o pedido</h3><p>Informe seus dados de entrega e abra o chat com o vendedor.</p></div>
+            <div class="step"><span>3</span><h3>Pague e envie o comprovante</h3><p>Faça a transferência e mande o comprovante direto no chat.</p></div>
+            <div class="step"><span>4</span><h3>Receba em casa</h3><p>O vendedor confirma o pagamento, envia o produto e avisa você.</p></div>
+        </div></section>
         <!-- ========== SEÇÃO PORQUE COMPRAR NA EKULLITECH ========== -->
         <section class="benefits-section">
             <h2 class="section-title">Por que Comprar na EkuliTech?</h2>
@@ -255,6 +272,12 @@
                     <p>Melhores preços do mercado angolano</p>
                 </div>
             </div>
+        </section>
+        <section class="faq"><h2 class="section-title">Perguntas frequentes</h2>
+            <details><summary>Os iPhones são originais?</summary><p>Sim. Trabalhamos com fornecedores nos EUA e todos os aparelhos passam por inspeção antes do envio.</p></details>
+            <details><summary>Como funciona o pagamento?</summary><p>Após confirmar o pedido, você recebe os dados para transferência bancária e envia o comprovante no chat. O vendedor confirma e envia o produto.</p></details>
+            <details><summary>Qual o prazo de entrega?</summary><p>Entre 15 e 28 dias úteis após a confirmação do pagamento.</p></details>
+            <details><summary>Posso falar com o vendedor antes de comprar?</summary><p>Claro! Use o botão de WhatsApp no canto da tela ou o chat do pedido.</p></details>
         </section>
     </main>
     
@@ -347,5 +370,7 @@
             });
         });
     </script>
+<script src="cart.js"></script>
+<script src="fb.js"></script>
 </body>
 </html>

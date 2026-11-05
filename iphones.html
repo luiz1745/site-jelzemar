@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iPhones - EkuluTech</title>
+    <title>iPhones - EkuliTech</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="theme.css">
     <style>
         /* ========== NAVEGAÇÃO CORRIGIDA ========== */
         nav {
@@ -109,22 +110,7 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
-        
-        .storage-options {
-            font-weight: 600;
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-            color: var(--text);
-            line-height: 1.4;
-        }
-        
-        .storage-option {
-            background-color: #1a1919;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-        }
-        
+
         .iphones-hero {
             background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
             background-size: cover;
@@ -135,30 +121,30 @@
             margin-bottom: 3rem;
             border-bottom: 2px solid var(--secondary);
         }
-        
+
         .iphones-hero h1 {
             font-size: 3rem;
             margin-bottom: 1.5rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        
+
         .iphones-hero h1 span {
             color: var(--secondary);
             text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
         }
-        
+
         .iphones-hero p {
             font-size: 1.3rem;
             max-width: 700px;
             margin: 0 auto 2.5rem;
             line-height: 1.8;
         }
-        
+
         .generation-section {
             margin: 4rem 0;
         }
-        
+
         .section-title {
             text-align: center;
             margin-bottom: 2.5rem;
@@ -168,7 +154,7 @@
             font-size: 2.2rem;
             text-transform: uppercase;
         }
-        
+
         .section-title::after {
             content: '';
             position: absolute;
@@ -180,7 +166,7 @@
             background-color: var(--secondary);
             border-radius: 2px;
         }
-        
+
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -202,6 +188,9 @@
             margin-bottom: 15px;
         }
     </style>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 rx=%2722%27 fill=%27%230a0a0b%27/%3E%3Ctext x=%2750%27 y=%2770%27 font-size=%2770%27 font-weight=%27800%27 text-anchor=%27middle%27 fill=%27%23FFD700%27 font-family=%27Arial%27%3EE%3C/text%3E%3C/svg%3E">
+    <meta name="theme-color" content="#0a0a0b">
+    <meta name="description" content="EkuliTech - iPhones originais importados dos EUA com atendimento pelo chat. Luanda, Angola.">
 </head>
 <body>
     <!-- HEADER -->
@@ -211,9 +200,9 @@
                 <div>
                     <a href="index.html" class="logo">
                         <i class="fas fa-laptop-code"></i>
-                        Ekulu<span>Tech</span>
+                        Ekuli<span>Tech</span>
                     </a>
-                    <div class="tagline">Ekulu Company</div>
+                    <div class="tagline">Ekuli Company</div>
                 </div>
                 <div class="search-bar">
                     <form id="searchForm">
@@ -238,22 +227,21 @@
 
     <!-- CONTEÚDO PRINCIPAL -->
     <main class="container">
-        <section class="iphones-hero">
-            <div class="container">
-                <h1>iPhones <span>Importados</span></h1>
-                <p>Os melhores iPhones importados diretamente dos EUA com garantia, qualidade e os melhores preços do mercado.</p>
-            </div>
+        <section class="hero-pro" style="margin-top:30px;padding:60px 20px 46px">
+            <span class="pill"><i class="fas fa-mobile-alt"></i> Catálogo completo</span>
+            <h1>iPhones <em>importados</em></h1>
+            <p>iPhones semi novos, do iPhone 8 ao 17 Pro Max. Escolha cor e capacidade e fale com o vendedor pelo chat.</p>
         </section>
+        <div class="chips" id="chips"></div>
         
         <!-- iPhone 17 Series -->
         <section class="generation-section" data-generation="iphone-17">
             <h2 class="section-title">iPhone 17 Series</h2>
             <div class="products-grid">
                 <div class="product-card" data-name="iPhone 17 Pro Max" onclick="window.location.href='selecionar-iphone.html?model=iphone-17-pro-max'">
-                    <div class="product-image"><img src="https://iphoriya.ru/wp-content/uploads/iphone-17-pro-max-cosmic-orange.webp" alt="iPhone 17 Pro Max"></div>
+                    <div class="product-image"><img src="https://twigo.ru/center/iblock/b87/oin2p9q7yzen4dkwz9p1v0ltnwegopxk/17-pro-orange.png" alt="iPhone 17 Pro Max"></div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 17 Pro Max</h3>
-                        <div class="storage-options"><div class="storage-option">256GB</div></div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -261,15 +249,13 @@
                     <div class="product-image"><img src="https://rebro-store.ru/upload/iblock/fdc/tmynb3lzu5qjsrgy0e8uayxv3c2kbxpj.jpg" alt="iPhone 17 Pro"></div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 17 Pro</h3>
-                        <div class="storage-options"><div class="storage-option">256GB</div></div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
                 <div class="product-card" data-name="iPhone 17" onclick="window.location.href='selecionar-iphone.html?model=iphone-17'">
-                    <div class="product-image"><img src="https://ipixel.ru/upload/iblock/09f/1h7cezikek1ofmismm7ifcap613sscm8.jpg" alt="iPhone 17"></div>
+                    <div class="product-image"><img src="https://www.phonedo.ru/wp-content/uploads/2025/09/82.jpg" alt="iPhone 17"></div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 17</h3>
-                        <div class="storage-options"><div class="storage-option">256GB</div></div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -284,7 +270,6 @@
                     <div class="product-image"><img src="https://apple-avenue.ru/upload/iblock/a37/gbvisyzsibp9vtvb2plsuw14wu7lnjb3.jpg" alt="iPhone 16 Pro Max"></div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 16 Pro Max</h3>
-                        <div class="storage-options"><div class="storage-option">256GB</div></div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -292,7 +277,6 @@
                     <div class="product-image"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNczoFdU916HKHXIXtTmTZLiDK9kfTGJMQUA&s" alt="iPhone 16 Pro"></div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 16 Pro</h3>
-                        <div class="storage-options"><div class="storage-option">256GB</div></div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -300,7 +284,6 @@
                     <div class="product-image"><img src="https://белоеяблоко.рф/upload/resize_cache/iblock/2bb/800_800_1/rzcbgbfiii1bvr4xe5ck48gxcuze98ky.png" alt="iPhone 16"></div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 16</h3>
-                        <div class="storage-options"><div class="storage-option">128GB</div></div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -315,7 +298,6 @@
                     <div class="product-image"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJcolMLusTfVMd5T7aHUEz4diSflXSwfaV4A&s" alt="iPhone 15 Pro Max"></div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 15 Pro Max</h3>
-                        <div class="storage-options"><div class="storage-option">256GB</div></div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -323,7 +305,6 @@
                     <div class="product-image"><img src="https://rebro-store.ru/upload/iblock/653/bue5rc030pion0doern3egx8n8x39lpb.jpg" alt="iPhone 15 Pro"></div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 15 Pro</h3>
-                        <div class="storage-options"><div class="storage-option">128GB</div></div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -331,7 +312,6 @@
                     <div class="product-image"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoSjwRfdLVjKITqG93fSLiADmXvYPpR5nxqg&s" alt="iPhone 15"></div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 15</h3>
-                        <div class="storage-options"><div class="storage-option">128GB</div></div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -343,18 +323,16 @@
             <h2 class="section-title">iPhone 14 Series</h2>
             <div class="products-grid">
                 <div class="product-card" data-name="iPhone 14 Pro Max" onclick="window.location.href='selecionar-iphone.html?model=iphone-14-pro-max'">
-                    <div class="product-image"><img src="https://magimag.ma/web/image/product.template/6637/image_1024?unique=b3edaae" alt="iPhone 14 Pro Max"></div>
+                    <div class="product-image"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjM25F2YdbkZHnafrB0AjEDGZv9vcA0rh0ALKqtCNVG_TBSRgTZAQb0IQ&s=10" alt="iPhone 14 Pro Max"></div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 14 Pro Max</h3>
-                        <div class="storage-options"><div class="storage-option">128GB</div></div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
                 <div class="product-card" data-name="iPhone 14 Pro" onclick="window.location.href='selecionar-iphone.html?model=iphone-14-pro'">
-                    <div class="product-image"><img src="https://magimag.ma/web/image/product.template/6637/image_1024?unique=b3edaae" alt="iPhone 14 Pro"></div>
+                    <div class="product-image"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLac2U8zEPxhbpDi9BNfriw5O0twWxSAVqtHAhDpskjj0afnOAlf_5Pggd&s=10" alt="iPhone 14 Pro"></div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 14 Pro</h3>
-                        <div class="storage-options"><div class="storage-option">128GB</div></div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -362,7 +340,6 @@
                     <div class="product-image"><img src="https://applestore72.ru/upload/resize_cache/iblock/0a0/1024_1024_0/s9copnocraqjm51clmk2lau14m6lzc3k.jpeg" alt="iPhone 14"></div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 14</h3>
-                        <div class="storage-options"><div class="storage-option">128GB</div></div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -377,7 +354,6 @@
                     <div class="product-image"><img src="https://i0.wp.com/apple.nsk.ru/wp-content/uploads/2022/07/30059058bb.jpg?fit=430%2C430&ssl=1" alt="iPhone 13 Pro Max"></div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 13 Pro Max</h3>
-                        <div class="storage-options"><div class="storage-option">128GB</div></div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -385,7 +361,6 @@
                     <div class="product-image"><img src="https://i0.wp.com/apple.nsk.ru/wp-content/uploads/2022/07/30059058bb.jpg?fit=430%2C430&ssl=1" alt="iPhone 13 Pro"></div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 13 Pro</h3>
-                        <div class="storage-options"><div class="storage-option">128GB</div></div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -393,7 +368,6 @@
                     <div class="product-image"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-ckAo0Bo1MztxDd3Qwx3woraXlEqJWSfp6A&s" alt="iPhone 13"></div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 13</h3>
-                        <div class="storage-options"><div class="storage-option">128GB</div></div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -408,7 +382,6 @@
                     <div class="product-image"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQjisEMyYuSO0z_UhoE1cWtsl9We7U5uJs7Q&s" alt="iPhone 12 Pro Max"></div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 12 Pro Max</h3>
-                        <div class="storage-options"><div class="storage-option">128GB</div></div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -416,7 +389,6 @@
                     <div class="product-image"><img src="https://www.yablokitradein.ru/image/cache/catalog/12%20pro%20iphone/iphone-12-pro-gold-hero-500x500.png" alt="iPhone 12 Pro"></div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 12 Pro</h3>
-                        <div class="storage-options"><div class="storage-option">128GB</div></div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -424,7 +396,6 @@
                     <div class="product-image"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS36_RuWtAWrt35BUBf3tnMIEdbew9cVdKt1A&s" alt="iPhone 12"></div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 12</h3>
-                        <div class="storage-options"><div class="storage-option">64GB</div></div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -439,7 +410,6 @@
                     <div class="product-image"><img src="https://mobi-s.ru/wp-content/uploads/2021/05/1.jpg.webp" alt="iPhone 11 Pro Max"></div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 11 Pro Max</h3>
-                        <div class="storage-options"><div class="storage-option">64GB</div></div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -447,7 +417,6 @@
                     <div class="product-image"><img src="https://mobi-s.ru/wp-content/uploads/2021/05/1.jpg.webp" alt="iPhone 11 Pro"></div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 11 Pro</h3>
-                        <div class="storage-options"><div class="storage-option">64GB</div></div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -455,7 +424,6 @@
                     <div class="product-image"><img src="https://device365.ru/upload/iblock/0d2/skadotdylqdg2cj4y0kza6smw8vkngje.webp" alt="iPhone 11"></div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 11</h3>
-                        <div class="storage-options"><div class="storage-option">64GB</div></div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -470,15 +438,13 @@
                     <div class="product-image"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVl2dkBq6BNavmGLirzCUFEkqwXiBxQmI8F_BIvTrxOkSWOFShLqId6veChph3jCPutXA&usqp=CAU" alt="iPhone XS Max"></div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone XS Max</h3>
-                        <div class="storage-options"><div class="storage-option">64GB</div></div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
                 <div class="product-card" data-name="iPhone XS" onclick="window.location.href='selecionar-iphone.html?model=iphone-xs'">
-                    <div class="product-image"><img src="https://смартфон74.рф/image/cache/catalog/1vossta/iphonexsmaxbu/appleiphonexsmaxser-1000x1000.jpg" alt="iPhone XS"></div>
+                    <div class="product-image"><img src="https://a66.ru/catalogue/variations/modern/239/detail-800/5190_large-b786a639ac3127b01b79.webp" alt="iPhone XS"></div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone XS</h3>
-                        <div class="storage-options"><div class="storage-option">64GB</div></div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -486,7 +452,6 @@
                     <div class="product-image"><img src="https://i-stock.store/image/cache/catalog/1new1/xriphone/appleiphonexryellow-500x500.png" alt="iPhone XR"></div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone XR</h3>
-                        <div class="storage-options"><div class="storage-option">64GB</div></div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -494,7 +459,6 @@
                     <div class="product-image"><img src="https://mccentre.ru/images/cache/data/apple-iphone-xr/iphone-xr-rd-202010-1-800x800.jpg" alt="iPhone X"></div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone X</h3>
-                        <div class="storage-options"><div class="storage-option">64GB</div></div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -509,7 +473,6 @@
                     <div class="product-image"><img src="https://www.vedion.pl/hpeciai/e6fe0936b9014eab8fe2de77e394e301/pol_pl_Apple-iPhone-8-Plus-Gold-64GB-Smartfon-Stan-Jak-Nowy-18027_5.jpg" alt="iPhone 8 Plus"></div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 8 Plus</h3>
-                        <div class="storage-options"><div class="storage-option">64GB</div></div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -517,7 +480,6 @@
                     <div class="product-image"><img src="https://mobi-s.ru/wp-content/uploads/2018/01/iphone-8-silver.jpg.webp" alt="iPhone 8"></div>
                     <div class="product-info">
                         <h3 class="product-title">iPhone 8</h3>
-                        <div class="storage-options"><div class="storage-option">64GB</div></div>
                         <p class="product-location"><i class="fas fa-map-marker-alt"></i> Importado dos EUA</p>
                     </div>
                 </div>
@@ -530,8 +492,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>EkuluTech</h3>
-                    <p>Ekulu Company - Especialistas em tecnologia importada dos Estados Unidos com garantia de qualidade e procedência.</p>
+                    <h3>EkuliTech</h3>
+                    <p>Ekuli Company - Especialistas em tecnologia importada dos Estados Unidos com garantia de qualidade e procedência.</p>
                 </div>
                 <div class="footer-column">
                     <h3>Links Rápidos</h3>
@@ -550,13 +512,13 @@
                     <h3>Contato</h3>
                     <ul class="footer-links">
                         <li><i class="fas fa-phone"></i> +244 943 400 675</li>
-                        <li><i class="fas fa-envelope"></i> ekulucompany@gmail.com</li>
+                        <li><i class="fas fa-envelope"></i> ekulicompany@gmail.com</li>
                         <li><i class="fas fa-map-marker-alt"></i> Luanda, Angola</li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; <span id="currentYear"></span> EkuluTech - Ekulu Company - Todos os direitos reservados</p>
+                <p>&copy; <span id="currentYear"></span> EkuliTech - Ekuli Company - Todos os direitos reservados</p>
             </div>
         </div>
     </footer>
@@ -651,5 +613,76 @@
         // Inicializar
         getSearchTermFromURL();
     </script>
+    <script>
+        (function(){
+            var P = {
+                "iphone-17-pro-max": 1700000,
+                "iphone-17-pro": 1450000,
+                "iphone-17": 1170000,
+                "iphone-16-pro-max": 930000,
+                "iphone-16-pro": 850000,
+                "iphone-16": 760000,
+                "iphone-15-pro-max": 830000,
+                "iphone-15-pro": 730000,
+                "iphone-15": 540000,
+                "iphone-14-pro-max": 630000,
+                "iphone-14-pro": 550000,
+                "iphone-14": 430000,
+                "iphone-13-pro-max": 530000,
+                "iphone-13-pro": 470000,
+                "iphone-13": 370000,
+                "iphone-12-pro-max": 440000,
+                "iphone-12-pro": 350000,
+                "iphone-12": 280000,
+                "iphone-11-pro-max": 320000,
+                "iphone-11-pro": 270000,
+                "iphone-11": 220000,
+                "iphone-xs-max": 265000,
+                "iphone-xs": 230000,
+                "iphone-xr": 230000,
+                "iphone-x": 200000,
+                "iphone-8-plus": 150000,
+                "iphone-8": 110000
+            };
+            document.querySelectorAll('.product-card').forEach(function(c){
+                var m = (c.getAttribute('onclick') || '').match(/model=([a-z0-9-]+)/);
+                if(!m || !P[m[1]]) return;
+                var n = new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2 }).format(P[m[1]]);
+                var el = document.createElement('p');
+                el.className = 'price-from';
+                el.innerHTML = '<small>a partir de</small> ' + n + ' Kz';
+                var title = c.querySelector('.product-title');
+                if (title) {
+                    title.insertAdjacentElement('afterend', el);
+                }
+            });
+        })();
+    </script>
+    <script>
+        (function(){
+            var secs = [].slice.call(document.querySelectorAll('.generation-section')),
+                box = document.getElementById('chips');
+            if(!box) return;
+            function mk(l, k){
+                var b = document.createElement('button');
+                b.className = 'chip' + (k === 'all' ? ' on' : '');
+                b.textContent = l;
+                b.onclick = function(){
+                    [].forEach.call(box.children, function(c){ c.classList.remove('on'); });
+                    b.classList.add('on');
+                    secs.forEach(function(s){
+                        s.style.display = (k === 'all' || s.dataset.generation === k) ? 'block' : 'none';
+                    });
+                };
+                box.appendChild(b);
+            }
+            mk('Todos', 'all');
+            secs.forEach(function(s){
+                mk(s.querySelector('.section-title').textContent.replace(' Series', ''), s.dataset.generation);
+            });
+        })();
+    </script>
+    <script src="cart.js"></script>
+    <script src="fb.js"></script>
 </body>
 </html>

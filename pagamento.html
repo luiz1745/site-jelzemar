@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finalizar Compra - EkuluTech</title>
+    <title>Finalizar Compra - EkuliTech</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="theme.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
@@ -372,6 +373,9 @@
             }
         }
     </style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 rx=%2722%27 fill=%27%230a0a0b%27/%3E%3Ctext x=%2750%27 y=%2770%27 font-size=%2770%27 font-weight=%27800%27 text-anchor=%27middle%27 fill=%27%23FFD700%27 font-family=%27Arial%27%3EE%3C/text%3E%3C/svg%3E">
+    <meta name="theme-color" content="#0a0a0b">
+    <meta name="description" content="EkuliTech - iPhones originais importados dos EUA com atendimento pelo chat. Luanda, Angola.">
 </head>
 <body>
     <header>
@@ -380,9 +384,9 @@
                 <div>
                     <a href="index.html" class="logo">
                         <i class="fas fa-laptop-code"></i>
-                        Ekulu<span>Tech</span>
+                        Ekuli<span>Tech</span>
                     </a>
-                    <div class="tagline">Ekulu Company</div>
+                    <div class="tagline">Ekuli Company</div>
                 </div>
                 
                 <div class="search-bar">
@@ -406,7 +410,7 @@
     </nav>
 
     <main class="container">
-        <h1 style="text-align: center; margin: 20px 0 30px; color: #ffd700;">Finalizar Compra</h1>
+        <div class="checkout-steps"><span><b>1</b> Escolher iPhone</span><span class="on"><b>2</b> Seus dados</span><span><b>3</b> Chat e pagamento</span></div>
         
         <div class="checkout-container">
             <section class="order-summary">
@@ -421,6 +425,7 @@
             </section>
             
             <section class="payment-form">
+                <div class="handoff" id="authGate" style="display:none"><b>Entre na sua conta para finalizar.</b> É rápido e você acompanha o pedido e o chat com o vendedor.<br><a class="btn" id="gateBtn" style="margin-top:10px;padding:10px 22px" href="login.html">Entrar / Criar conta</a></div>
                 <h2>Informações para Entrega</h2>
                 
                 <div class="form-group">
@@ -443,7 +448,9 @@
                     <input type="text" id="city" placeholder="Sua cidade" autocomplete="address-level2">
                 </div>
                 
-                <button class="btn" id="finalizeBtn"><i class="fas fa-check-circle"></i> Confirmar Pedido</button>
+                <div class="handoff"><i class="fas fa-comments"></i> Ao confirmar, você abre um chat com o vendedor para enviar o comprovante de pagamento.</div>
+                
+                <button class="btn" id="finalizeBtn"><i class="fas fa-check-circle"></i> Confirmar e falar com o vendedor</button>
                 
                 <div class="security-notice">
                     <i class="fas fa-lock"></i> Suas informações estão protegidas com criptografia
@@ -456,8 +463,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>EkuluTech</h3>
-                    <p>Ekulu Company - Especialistas em tecnologia importada dos Estados Unidos com garantia de qualidade e procedência.</p>
+                    <h3>EkuliTech</h3>
+                    <p>Ekuli Company - Especialistas em tecnologia importada dos Estados Unidos com garantia de qualidade e procedência.</p>
                 </div>
                 
                 <div class="footer-column">
@@ -473,18 +480,19 @@
                     <h3>Contato</h3>
                     <ul class="footer-links">
                         <li><i class="fas fa-phone"></i> +244 943 400 675</li>
-                        <li><i class="fas fa-envelope"></i> ekulucompany@gmail.com</li>
+                        <li><i class="fas fa-envelope"></i> ekulicompany@gmail.com</li>
                         <li><i class="fas fa-map-marker-alt"></i> Luanda, Angola</li>
                     </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; <span id="currentYear"></span> EkuluTech - Ekulu Company - Todos os direitos reservados</p>
+                <p>&copy; <span id="currentYear"></span> EkuliTech - Ekuli Company - Todos os direitos reservados</p>
             </div>
         </div>
     </footer>
 
+    <script src="cart.js"></script>
     <script>
         // Ano atual
         document.getElementById('currentYear').textContent = new Date().getFullYear();
@@ -494,46 +502,35 @@
         
         let selectedProduct = null;
         
+        var isCartMode = new URLSearchParams(location.search).get('cart') === '1';
+        var items = [];
         function loadProductData() {
-            const savedProduct = localStorage.getItem('ekulu-checkout-item');
-            if (savedProduct) {
-                selectedProduct = JSON.parse(savedProduct);
-                displayOrderSummary();
-            } else {
-                selectedProduct = {
-                    name: "iPhone 15 Pro Max",
-                    price: 1250000,
-                    image: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-max-black-titanium?wid=512&hei=512&fmt=jpeg&qlt=90&.v=1693005577888",
-                    color: "Titânio Preto",
-                    storage: "256GB"
-                };
-                displayOrderSummary();
+            if (isCartMode) { items = Cart.items(); }
+            else {
+                try { var s = JSON.parse(localStorage.getItem('ekuli-checkout-item')); if (s) items = [Object.assign({qty: 1}, s)]; } catch (e) {}
             }
+            if (!items.length) {
+                document.getElementById('orderItems').innerHTML = '<p style="padding:20px 0">Nenhum produto selecionado. <a href="iphones.html" style="color:#FFD700">Ver iPhones</a></p>';
+                document.getElementById('finalizeBtn').disabled = true;
+                return;
+            }
+            displayOrderSummary();
         }
-        
+        function orderTotal() { return items.reduce(function (s, i) { return s + i.price * i.qty; }, 0); }
         function displayOrderSummary() {
-            if (!selectedProduct) return;
-            
-            const orderDiv = document.getElementById('orderItems');
-            const price = selectedProduct.price || 0;
-            
-            orderDiv.innerHTML = `
-                <div class="product-item">
-                    <div class="product-image-container">
-                        <div class="product-image-wrapper">
-                            <img src="${selectedProduct.image}" alt="${selectedProduct.name}" onerror="this.src='https://placehold.co/280x280?text=Produto'">
-                        </div>
-                    </div>
+            document.getElementById('orderItems').innerHTML = items.map(function (i) {
+                return `<div class="product-item">
+                    <div class="product-image-container"><div class="product-image-wrapper">
+                        <img src="${escapeHtml(i.image || '')}" alt="${escapeHtml(i.name)}" onerror="this.src='https://placehold.co/280x280?text=Produto'">
+                    </div></div>
                     <div class="product-details">
-                        <div class="product-name">${escapeHtml(selectedProduct.name)}</div>
-                        <div class="product-variant">Cor: ${escapeHtml(selectedProduct.color || 'Padrão')}</div>
-                        <div class="product-variant">Capacidade: ${escapeHtml(selectedProduct.storage || 'Padrão')}</div>
-                        <div class="product-price">${formatPrice(price)} Kz</div>
-                    </div>
-                </div>
-            `;
-            
-            document.getElementById('totalPrice').textContent = formatPrice(price) + ' Kz';
+                        <div class="product-name">${escapeHtml(i.name)} ${i.qty > 1 ? '(x' + i.qty + ')' : ''}</div>
+                        <div class="product-variant">Cor: ${escapeHtml(i.color || 'Padrão')}</div>
+                        <div class="product-variant">Capacidade: ${escapeHtml(i.storage || 'Padrão')}</div>
+                        <div class="product-price">${formatPrice(i.price * i.qty)} Kz</div>
+                    </div></div>`;
+            }).join('');
+            document.getElementById('totalPrice').textContent = formatPrice(orderTotal()) + ' Kz';
         }
         
         function formatPrice(price) {
@@ -567,7 +564,7 @@
             const formData = new FormData();
             formData.append('access_key', WEB3FORMS_ACCESS_KEY);
             formData.append('name', orderData.customerName);
-            formData.append('email', 'ekulucompany@gmail.com');
+            formData.append('email', 'ekulicompany@gmail.com');
             
             const message = `
 🛍️ NOVO PEDIDO - EKULUTECH 🛍️
@@ -576,10 +573,8 @@
 
 📦 PRODUTO:
 ─────────────────────────────────────────
-Produto: ${orderData.productName}
-Cor: ${orderData.productColor}
-Capacidade: ${orderData.productStorage}
-Valor: ${orderData.totalPrice} Kz
+${orderData.itemsText}
+TOTAL: ${orderData.totalPrice} Kz
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -595,12 +590,12 @@ Cidade: ${orderData.customerCity}
 🆔 Pedido Nº: ${orderData.orderId}
 📅 Data: ${new Date().toLocaleString('pt-BR')}
 
-🌐 Enviado via EkuluTech Website
+🌐 Enviado via EkuliTech Website
             `;
             
             formData.append('message', message);
             formData.append('subject', `🛍️ NOVO PEDIDO #${orderData.orderId} - ${orderData.customerName}`);
-            formData.append('from_name', 'EkuluTech Website');
+            formData.append('from_name', 'EkuliTech Website');
             
             try {
                 const response = await fetch('https://api.web3forms.com/submit', {
@@ -659,10 +654,12 @@ Cidade: ${orderData.customerCity}
                 
                 const orderData = {
                     orderId: orderId,
-                    productName: selectedProduct.name,
-                    productColor: selectedProduct.color || 'Padrão',
-                    productStorage: selectedProduct.storage || 'Padrão',
-                    totalPrice: formatPrice(selectedProduct.price),
+                    items: items.map(function (i) { return {name: i.name, color: i.color || 'Padrão', storage: i.storage || 'Padrão', qty: i.qty, price: i.price}; }),
+                    itemsText: items.map(function (i) { return `• ${i.qty}x ${i.name} - ${i.color || 'Padrão'} - ${i.storage || 'Padrão'} (${formatPrice(i.price * i.qty)} Kz)`; }).join('\n'),
+                    productName: items.map(function (i) { return i.name; }).join(', '),
+                    productColor: items[0].color || 'Padrão',
+                    productStorage: items[0].storage || 'Padrão',
+                    totalPrice: formatPrice(orderTotal()),
                     customerName: name,
                     customerPhone: phone,
                     customerAddress: address,
@@ -670,26 +667,22 @@ Cidade: ${orderData.customerCity}
                     orderDate: new Date().toISOString()
                 };
                 
-                // Enviar email (não bloqueia o redirecionamento)
-                sendEmailViaWeb3Forms(orderData).then(success => {
-                    if (success) {
-                        console.log('✅ Email enviado com sucesso!');
-                    } else {
-                        console.log('⚠️ Email não enviado, mas continuando...');
-                    }
-                });
-                
-                // Salvar dados
-                localStorage.setItem('ekulu-confirmed-order', JSON.stringify(orderData));
-                localStorage.removeItem('ekulu-checkout-item');
-                
-                console.log('📦 Dados salvos, redirecionando para pagamento_feito.html');
-                
-                // REDIRECIONAR - TESTE COM ALERT PRIMEIRO
-                alert('Pedido realizado com sucesso! Você será redirecionado.');
-                
-                // Redirecionar
-                window.location.href = 'pagamento_feito.html';
+                if (!Ekuli.configured || !Ekuli.user) {
+                    showErrorToast('Entre na sua conta para finalizar o pedido.');
+                    finalizeBtn.disabled = false; finalizeBtn.innerHTML = '<i class="fas fa-check-circle"></i> Confirmar e falar com o vendedor';
+                    return;
+                }
+                try {
+                    const docId = await Ekuli.createOrder({ num: orderId, name: name, phone: phone, address: address, city: city, items: orderData.items, totalText: orderData.totalPrice, total: orderTotal() });
+                    sendEmailViaWeb3Forms(orderData);
+                    localStorage.removeItem('ekuli-checkout-item');
+                    if (isCartMode) Cart.clear();
+                    window.location.href = 'pedido.html?id=' + docId;
+                } catch (err) {
+                    console.error(err);
+                    showErrorToast('Não foi possível criar o pedido. Tente novamente.');
+                    finalizeBtn.disabled = false; finalizeBtn.innerHTML = '<i class="fas fa-check-circle"></i> Confirmar e falar com o vendedor';
+                }
             });
         }
         
@@ -718,6 +711,19 @@ Cidade: ${orderData.customerCity}
         });
         
         console.log('🚀 Página de finalizar compra carregada!');
+    </script>
+<script src="fb.js"></script>
+    <script>
+    Ekuli.ready.then(function () {
+        var gate = document.getElementById('authGate'), btn = document.getElementById('finalizeBtn');
+        document.getElementById('gateBtn').href = 'login.html?next=' + encodeURIComponent('pagamento.html' + location.search);
+        Ekuli.onUser(function (u) {
+            if (!Ekuli.configured) { gate.style.display = 'block'; gate.firstChild.textContent = 'Contas ainda não configuradas pelo dono do site.'; btn.disabled = true; return; }
+            if (!u) { gate.style.display = 'block'; btn.disabled = true; return; }
+            gate.style.display = 'none'; if (items.length) btn.disabled = false;
+            var n = document.getElementById('name'); if (n && !n.value) n.value = u.displayName || '';
+        });
+    });
     </script>
 </body>
 </html>
